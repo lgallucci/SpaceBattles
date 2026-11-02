@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using SpaceBattlesGame.Input;
 using SpaceBattlesGraphics;
 
 namespace SpaceBattlesGame.GameEngines
@@ -27,16 +28,16 @@ namespace SpaceBattlesGame.GameEngines
             _playingGameRenderer.Draw(_graphicsEngine.Context);
         }
 
+        public override void Update(GameTime gameTime, ref GameState _gameState)
+        {
+            KeyboardHelper.Update();
+        }
+
         public override void SetScreenSize(int screenWidth, int screenHeight)
         {
             _screenWidth = screenWidth;
             _screenHeight = screenHeight;
             _playingGameRenderer.Resize(_screenWidth, _screenHeight);
-        }
-
-        public override void Update(GameTime gameTime, ref GameState _gameState)
-        {
-            throw new NotImplementedException();
         }
     }
 }

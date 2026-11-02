@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using SpaceBattlesGame.Input;
 using SpaceBattlesGraphics;
 
 namespace SpaceBattlesGame.GameEngines
@@ -7,6 +8,7 @@ namespace SpaceBattlesGame.GameEngines
     {
         public override void Update(GameTime gameTime, ref GameState _gameState)
         {
+            KeyboardHelper.Update();
         }
 
         public override void SetScreenSize(int screenWidth, int screenHeight)
