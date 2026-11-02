@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Space Battles",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build SpaceBattles",
+      "program": "${workspaceFolder}/SpaceBattlesGame/bin/Debug/net10.0/linux-x64/SpaceBattles.dll",
+      "args": [
+      ],
+      "cwd": "${workspaceFolder}/SpaceBattlesGame/bin/Debug/net10.0/linux-x64",
+      "console": "internalConsole"
+    }
+  ]
+}

@@ -68,7 +68,7 @@ namespace SpaceBattlesGraphics
         public void BeginSprites()
         {
             Device.SetRenderTarget(_sceneRenderTarget);
-            Device.Clear(new Color(53, 101, 77));
+            Device.Clear(new Color(0, 0, 0));
             BloomRenderer.Begin();
             SpriteBatch.Begin();
         }
@@ -100,8 +100,8 @@ namespace SpaceBattlesGraphics
 
         public void DrawButton(Rectangle bounds, string text, bool hovered)
         {
-            SpriteBatch.Draw(Art.Pixel, bounds, hovered ? new Color(60, 120, 90) : new Color(26, 50, 38));
-            var border = hovered ? Color.DeepPink : Color.MintCream;
+            SpriteBatch.Draw(Art.Pixel, bounds, hovered ? Theme.ButtonHoverBackground : Theme.ButtonBackground);
+            var border = hovered ? Theme.ButtonHoverBorder : Theme.ButtonBorder;
             SpriteBatch.Draw(Art.Pixel, new Rectangle(bounds.X, bounds.Y, bounds.Width, 2), border);
             SpriteBatch.Draw(Art.Pixel, new Rectangle(bounds.X, bounds.Bottom - 2, bounds.Width, 2), border);
             SpriteBatch.Draw(Art.Pixel, new Rectangle(bounds.X, bounds.Y, 2, bounds.Height), border);
@@ -109,16 +109,16 @@ namespace SpaceBattlesGraphics
 
             var size = Art.NameFont.MeasureString(text);
             SpriteBatch.DrawString(Art.NameFont, text,
-                new Vector2(bounds.X + (bounds.Width - size.X) / 2, bounds.Y + (bounds.Height - size.Y) / 2), Color.White);
+                new Vector2(bounds.X + (bounds.Width - size.X) / 2, bounds.Y + (bounds.Height - size.Y) / 2), Theme.ButtonText);
         }
 
         public void DrawPanel(Rectangle bounds)
         {
-            SpriteBatch.Draw(Art.Pixel, bounds, new Color(18, 36, 27));
-            SpriteBatch.Draw(Art.Pixel, new Rectangle(bounds.X, bounds.Y, bounds.Width, 3), Color.MintCream);
-            SpriteBatch.Draw(Art.Pixel, new Rectangle(bounds.X, bounds.Bottom - 3, bounds.Width, 3), Color.MintCream);
-            SpriteBatch.Draw(Art.Pixel, new Rectangle(bounds.X, bounds.Y, 3, bounds.Height), Color.MintCream);
-            SpriteBatch.Draw(Art.Pixel, new Rectangle(bounds.Right - 3, bounds.Y, 3, bounds.Height), Color.MintCream);
+            SpriteBatch.Draw(Art.Pixel, bounds, Theme.Panel);
+            SpriteBatch.Draw(Art.Pixel, new Rectangle(bounds.X, bounds.Y, bounds.Width, 3), Theme.Panel);
+            SpriteBatch.Draw(Art.Pixel, new Rectangle(bounds.X, bounds.Bottom - 3, bounds.Width, 3), Theme.Panel);
+            SpriteBatch.Draw(Art.Pixel, new Rectangle(bounds.X, bounds.Y, 3, bounds.Height), Theme.Panel);
+            SpriteBatch.Draw(Art.Pixel, new Rectangle(bounds.Right - 3, bounds.Y, 3, bounds.Height), Theme.Panel);
         }
 
         public void Unload()

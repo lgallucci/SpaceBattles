@@ -33,4 +33,19 @@ namespace SpaceBattlesGraphics
             Pixel.SetData(new[] { Color.White });
         }
     }
+
+    public static class Theme
+    {
+        //button colors
+        public static Color ButtonHoverBorder { get; internal set; } = Color.DeepPink;
+        public static Color ButtonBorder { get; internal set; } = Color.MintCream;
+        public static Color ButtonText { get; internal set; } = Color.White;
+        public static Color ButtonHoverBackground { get; internal set; } = new Color(60, 120, 90);
+        public static Color ButtonBackground { get; internal set; } = new Color(26, 50, 38);
+        internal static Color Panel { get; private set; } = Color.MintCream;
+
+
+        internal static Color Background { get; private set; } = Color.Black;
+        internal static Color Foreground { get; private set; } = Color.White;
+    }
 }
